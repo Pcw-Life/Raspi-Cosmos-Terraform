@@ -1,6 +1,6 @@
 # PCW|Integrates Smarthome System Development 🚀
 
-Welcome to the **PCW|Integrates Smarthome System Development** repository! This setup automates the installation and configuration of a comprehensive smart home system with network management, monitoring, and automation features. 
+Welcome to the **PCW|Integrates Smarthome System Development** repository! This setup automates the installation and configuration of a comprehensive smart home system with network management, monitoring, and automation features.
 
 ---
 
@@ -29,6 +29,7 @@ Welcome to the **PCW|Integrates Smarthome System Development** repository! This 
 ## Prerequisites ✅
 
 Make sure you have the following installed and configured:
+
 - **VS Code** with Remote-SSH setup for access to your Raspberry Pi
 - **1Password Desktop and CLI** on both your MacBook and Raspberry Pi
 - **Docker** installed on your Raspberry Pi and Docker Desktop on your MacBook Pro
@@ -39,7 +40,7 @@ Make sure you have the following installed and configured:
 
 ## Software Selection 🛠️
 
-To begin, select the software packages you want to install. The Terraform workflow will prompt you with `yes`/`no` options for each package and collect any required information. 
+To begin, select the software packages you want to install. The Terraform workflow will prompt you with `yes`/`no` options for each package and collect any required information.
 
 ---
 
@@ -48,12 +49,12 @@ To begin, select the software packages you want to install. The Terraform workfl
 Ensure that your 1Password is correctly configured. The following values should be stored in 1Password to avoid storing sensitive data in code:
 
 - **1Password Integration**
-  - Vault: `PCW Integrates`
+  - Vault: 'PCWICV'
   - Item: `API Credentials`
   - Credential Name: `API Key`
 
 - **UniFi Controller**
-  - Vault: `PCW Integrates`
+  - Vault: 'PCWICV'
   - Item: `UniFi`
   - Credential Name: `Admin Password`
 
@@ -64,6 +65,7 @@ The Terraform workflow will interactively check 1Password for these values and p
 ## Cosmos Cloud Setup ☁️
 
 Cosmos Cloud will serve as the front-end management platform. This setup will:
+
 1. Deploy Cosmos Cloud on Docker.
 2. Configure necessary DNS and security settings with Cloudflare.
 
@@ -72,6 +74,7 @@ Cosmos Cloud will serve as the front-end management platform. This setup will:
 ## Home Assistant Setup 🏠
 
 Set up **Home Assistant** for smart home device integration. This module will:
+
 1. Install Home Assistant on your Raspberry Pi.
 2. Configure IoT devices and automation workflows.
 
@@ -80,6 +83,7 @@ Set up **Home Assistant** for smart home device integration. This module will:
 ## Node-RED Integration 🔄
 
 Add **Node-RED** for creating and managing automation flows within Home Assistant:
+
 1. Deploy Node-RED as a Docker container.
 2. Configure Node-RED to communicate with Home Assistant for automation tasks.
 
@@ -88,6 +92,7 @@ Add **Node-RED** for creating and managing automation flows within Home Assistan
 ## Grafana Setup for Analytics 📊
 
 **Grafana** will visualize your data and provide analytics dashboards:
+
 1. Install Grafana as a Docker container.
 2. Configure it to pull data from Prometheus and other sources.
 
@@ -96,6 +101,7 @@ Add **Node-RED** for creating and managing automation flows within Home Assistan
 ## Prometheus Setup for Monitoring 📈
 
 **Prometheus** will handle system monitoring and alerting:
+
 1. Install Prometheus.
 2. Set up integrations with Grafana and configure alerting rules.
 
@@ -104,6 +110,7 @@ Add **Node-RED** for creating and managing automation flows within Home Assistan
 ## UniFi Controller for Identity Enterprise 🌐
 
 The **UniFi Controller** enables centralized network management:
+
 1. Deploy UniFi Controller as a Docker container.
 2. Integrate it with UniFi Identity Enterprise for SSO and App Launcher.
 
@@ -112,6 +119,7 @@ The **UniFi Controller** enables centralized network management:
 ## Database Setup 🗄️
 
 For data storage, choose between **MySQL** or **MongoDB**:
+
 1. Deploy the selected database on Docker.
 2. Configure database connections for Home Assistant and other services.
 
@@ -120,6 +128,7 @@ For data storage, choose between **MySQL** or **MongoDB**:
 ## 1Password Connect Server for APIs 🌉
 
 **1Password Connect Server** enables secure API access:
+
 1. Deploy 1Password Connect Server.
 2. Integrate it with other components to securely manage secrets.
 
@@ -128,6 +137,7 @@ For data storage, choose between **MySQL** or **MongoDB**:
 ## GitHub CLI and VS Code Extensions 💻
 
 Install **GitHub CLI** and other VS Code extensions for seamless development:
+
 1. Use the 1Password API to authenticate GitHub CLI.
 2. Ensure extensions are linked to the correct repositories and credentials.
 
@@ -136,6 +146,7 @@ Install **GitHub CLI** and other VS Code extensions for seamless development:
 ## Cloudflare Workers Setup for DDNS 🌐
 
 Set up **Cloudflare Workers** to manage DDNS and other services:
+
 1. Configure Workers using the Cloudflare API.
 2. Set up DDNS to dynamically manage domain records.
 
@@ -144,6 +155,7 @@ Set up **Cloudflare Workers** to manage DDNS and other services:
 ## Dry Run and Installation 🚦
 
 Once all configurations are set:
+
 1. **Run a Dry Run**: The Terraform script will verify configurations and alert you to any missing information.
 2. **Begin Installation**: If the dry run completes successfully, the workflow will proceed with installation.
 
@@ -152,6 +164,7 @@ Once all configurations are set:
 ## Troubleshooting 🛠️
 
 If you encounter any issues during the setup:
+
 1. Review each module’s logs.
 2. Confirm that all necessary credentials are available in 1Password.
 3. Re-run the Terraform workflow, ensuring interactive prompts are addressed.
