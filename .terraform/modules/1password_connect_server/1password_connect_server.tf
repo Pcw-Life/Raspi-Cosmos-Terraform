@@ -8,11 +8,6 @@ terraform {
   }
 }
 
-variable "database_type" {
-  description = "The type of database to deploy (mysql or mongodb)"
-  type        = string
-}
-
 variable "onepassword_connect_url" {
   description = "The URL for the 1Password Connect server"
   type        = string

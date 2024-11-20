@@ -27,6 +27,7 @@ prompt_install "Prometheus" install_prometheus
 prompt_install "UniFi Controller" install_unifi
 prompt_install "MySQL or MongoDB" install_database
 prompt_install "Pi-hole" install_pihole
+prompt_install "Visual Studio Code with extensions" install_vscode
 
 # Check for 1Password CLI
 if ! command -v op &> /dev/null; then
@@ -44,7 +45,15 @@ fi
 
 # Check and manage required credentials in 1Password
 echo "🔍 Checking for required credentials in 1Password..."
-required_items=("cloudflare_api_token" "onepassword_api_key" "grafana_admin_password" "unifi_admin_password" "pihole_password")
+required_items=(
+    "cloudflare_api_token"
+    "onepassword_api_key"
+    "grafana_admin_password"
+    "unifi_admin_password"
+    "pihole_password"
+    "github_personal_access_token"
+    "vscode_sync"
+)
 
 for item in "${required_items[@]}"; do
     if ! op item get "$item" &> /dev/null; then
@@ -86,9 +95,14 @@ install_prometheus = ${install_prometheus}
 install_unifi = ${install_unifi}
 install_database = ${install_database}
 install_pihole = ${install_pihole}
+install_vscode = ${install_vscode}
 EOT
 
 echo "✅ Configuration saved to selection.tfvars."
+
+# Log configuration for troubleshooting
+echo "Logging configuration to setup.log..."
+cat selection.tfvars > setup.log
 
 # Final instructions
 echo "🎉 Setup complete!"

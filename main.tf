@@ -93,9 +93,8 @@ module "credential_check" {
   required_services = var.required_services
 }
 
-# Database Module
-module "database_setup" {
-  source = "./modules/database_setup"
-  count  = var.install_database ? 1 : 0
-  database_type = var.database_type
+# VS Code Extensions Setup Module
+module "vscode_extensions_setup" {
+  source = "./modules/vscode_extensions_setup"
+  count  = var.install_vscode ? 1 : 0
 }

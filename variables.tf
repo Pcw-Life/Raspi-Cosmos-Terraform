@@ -53,22 +53,131 @@ variable "install_onepassword_connect" {
   description = "Set to true to enable 1Password Connect Server."
 }
 
+variable "install_vscode" {
+  type        = bool
+  default     = false
+  description = "Set to true to install Visual Studio Code and extensions."
+}
+
 # Credential-related variables
 variable "onepassword_vault_name" {
   type        = string
   description = "The name of the 1Password vault to use for storing credentials."
+  default     = "PCWProps"
 }
 
 variable "required_services" {
-  type = list(object({
-    name        = string
-    username    = string
-    password    = string
-    email       = string
-    api_token   = string
-    ssh_key     = string
+  type = map(object({
+    item_name      = string
+    username_key   = string
+    password_key   = string
+    email_key      = string
+    api_token_key  = string
+    ssh_key_key    = string
+    login_url_key  = string
   }))
-  description = "List of required services and their credentials."
+  description = "Required services and the fields expected in 1Password."
+  default = {
+    cloudflare = {
+      item_name      = "Cloudflare API"
+      username_key   = ""
+      password_key   = ""
+      email_key      = "email"
+      api_token_key  = "api_token"
+      ssh_key_key    = ""
+      login_url_key  = "https://dash.cloudflare.com"
+    }
+    cosmos = {
+      item_name      = "Cosmos Admin"
+      username_key   = "username"
+      password_key   = "password"
+      email_key      = "email"
+      api_token_key  = ""
+      ssh_key_key    = ""
+      login_url_key  = ""
+    }
+    grafana = {
+      item_name      = "Grafana Admin"
+      username_key   = "username"
+      password_key   = "password"
+      email_key      = "email"
+      api_token_key  = ""
+      ssh_key_key    = ""
+      login_url_key  = "https://grafana.com"
+    }
+    home_assistant = {
+      item_name      = "Home Assistant Admin"
+      username_key   = "username"
+      password_key   = "password"
+      email_key      = "email"
+      api_token_key  = ""
+      ssh_key_key    = ""
+      login_url_key  = "https://home-assistant.io"
+    }
+    node_red = {
+      item_name      = "Node-RED Admin"
+      username_key   = "username"
+      password_key   = "password"
+      email_key      = "email"
+      api_token_key  = ""
+      ssh_key_key    = ""
+      login_url_key  = "https://nodered.org"
+    }
+    pihole = {
+      item_name      = "Pi-hole Admin"
+      username_key   = "username"
+      password_key   = "password"
+      email_key      = ""
+      api_token_key  = ""
+      ssh_key_key    = ""
+      login_url_key  = "http://pi.hole"
+    }
+    prometheus = {
+      item_name      = "Prometheus Admin"
+      username_key   = "username"
+      password_key   = "password"
+      email_key      = "email"
+      api_token_key  = ""
+      ssh_key_key    = ""
+      login_url_key  = ""
+    }
+    unifi = {
+      item_name      = "UniFi Admin"
+      username_key   = "username"
+      password_key   = "password"
+      email_key      = "email"
+      api_token_key  = ""
+      ssh_key_key    = ""
+      login_url_key  = "https://unifi.ui.com"
+    }
+    github = {
+      item_name      = "GitHub PAT"
+      username_key   = "username"
+      password_key   = ""
+      email_key      = "email"
+      api_token_key  = "personal_access_token"
+      ssh_key_key    = "ssh_key"
+      login_url_key  = "https://github.com"
+    }
+    onepassword = {
+      item_name      = "1Password Admin"
+      username_key   = "username"
+      password_key   = "password"
+      email_key      = "email"
+      api_token_key  = "secret_key"
+      ssh_key_key    = ""
+      login_url_key  = "https://my.1password.com"
+    }
+    raspberrypi = {
+      item_name      = "RaspberryPi Admin"
+      username_key   = "username"
+      password_key   = "password"
+      email_key      = ""
+      api_token_key  = ""
+      ssh_key_key    = ""
+      login_url_key  = ""
+    }
+  }
 }
 
 # Cloudflare-specific variables

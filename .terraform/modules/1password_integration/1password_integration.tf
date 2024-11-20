@@ -1,3 +1,4 @@
+# Variables for 1Password Integration
 variable "database_type" {
   description = "The type of database to deploy (mysql or mongodb)"
   type        = string
@@ -18,7 +19,7 @@ variable "onepassword_item" {
   type        = string
 }
 
-# 1Password Integration
+# Terraform block for required provider
 terraform {
   required_providers {
     onepassword = {
@@ -28,12 +29,26 @@ terraform {
   }
 }
 
+# Provider configuration
 provider "onepassword" {
   token = var.onepassword_api_token
 }
 
+# Example resource for 1Password
 resource "onepassword_item" "example" {
   vault    = var.onepassword_vault
   title    = var.onepassword_item
   category = "login"
+  fields = [
+    {
+      label = "username"
+      value = "example_username"
+      type  = "string"
+    },
+    {
+      label = "password"
+      value = "example_password"
+      type  = "concealed"
+    }
+  ]
 }
