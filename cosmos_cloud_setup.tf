@@ -1,9 +1,12 @@
-# Cosmos Cloud setup
-resource "docker_container" "cosmos_cloud" {
-  image = "cosmoscloud/cosmos:${var.cosmos_cloud_version}"
-  name  = "cosmos_cloud"
-  ports {
-    internal = 80
-    external = 8080
-  }
+# Cosmos Cloud Setup
+module "cosmos_cloud" {
+  source = "azukaar/cosmos-server/dockerhub"
+
+  # Variables
+  container_name = "cosmos-server"
+  network_mode   = "host"
+  volumes = [
+    "/var/run/docker.sock:/var/run/docker.sock",
+    "/var/lib/cosmos:/config"
+  ]
 }

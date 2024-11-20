@@ -4,171 +4,129 @@ Welcome to the **PCW|Integrates Smarthome System Development** repository! This 
 
 ---
 
+## **[➡️ CLICK HERE TO START THE INSTALLATION PROCESS](#dry-run-and-installation-)**  
+
+*See below for a detailed outline of the process.*
+
+---
+
 ## High-Level Setup Checklist 📋
 
 1. [PCW|Integrates Smarthome System Development 🚀](#pcwintegrates-smarthome-system-development-)
-   1. [High-Level Setup Checklist 📋](#high-level-setup-checklist-)
-   2. [Prerequisites ✅](#prerequisites-)
-   3. [Software Selection 🛠️](#software-selection-️)
-   4. [1Password Integration 🔐](#1password-integration-)
-   5. [Cosmos Cloud Setup ☁️](#cosmos-cloud-setup-️)
-   6. [Home Assistant Setup 🏠](#home-assistant-setup-)
-   7. [Node-RED Integration 🔄](#node-red-integration-)
-   8. [Grafana Setup for Analytics 📊](#grafana-setup-for-analytics-)
-   9. [Prometheus Setup for Monitoring 📈](#prometheus-setup-for-monitoring-)
-   10. [UniFi Controller for Identity Enterprise 🌐](#unifi-controller-for-identity-enterprise-)
-   11. [Database Setup 🗄️](#database-setup-️)
-   12. [1Password Connect Server for APIs 🌉](#1password-connect-server-for-apis-)
-   13. [GitHub CLI and VS Code Extensions 💻](#github-cli-and-vs-code-extensions-)
-   14. [Cloudflare Workers Setup for DDNS 🌐](#cloudflare-workers-setup-for-ddns-)
-   15. [Dry Run and Installation 🚦](#dry-run-and-installation-)
-   16. [Troubleshooting 🛠️](#troubleshooting-️)
+   1. [**➡️ CLICK HERE TO START THE INSTALLATION PROCESS**](#️-click-here-to-start-the-installation-process)
+   2. [High-Level Setup Checklist 📋](#high-level-setup-checklist-)
+   3. [Prerequisites ✅](#prerequisites-)
+   4. [Software Selection 🛠️](#software-selection-️)
+   5. [Credential Check 🔐](#credential-check-)
+      1. [Supported Credentials](#supported-credentials)
+      2. [Credential Check Workflow](#credential-check-workflow)
+   6. [Pi-hole Setup for DNS-Based Ad-Blocking 🚫](#pi-hole-setup-for-dns-based-ad-blocking-)
+   7. [Cosmos Cloud Setup ☁️](#cosmos-cloud-setup-️)
+   8. [Dry Run and Installation 🚦](#dry-run-and-installation-)
+   9. [Troubleshooting 🛠️](#troubleshooting-️)
 
 ---
 
 ## Prerequisites ✅
 
-Make sure you have the following installed and configured:
+...
 
-- **VS Code** with Remote-SSH setup for access to your Raspberry Pi
-- **1Password Desktop and CLI** on both your MacBook and Raspberry Pi
-- **Docker** installed on your Raspberry Pi and Docker Desktop on your MacBook Pro
-- **Cloudflare Account** with API tokens for DNS and Cloudflare Workers
-- **GitHub Account** for managing repositories and Actions
+Ensure you have the following installed and ready:
+
+- **1Password CLI and Desktop**
+- **Docker** (on Raspberry Pi and MacBook Pro)
+- **GitHub Account**
+- **Cloudflare Account** (with API tokens)
 
 ---
 
 ## Software Selection 🛠️
 
-To begin, select the software packages you want to install. The Terraform workflow will prompt you with `yes`/`no` options for each package and collect any required information.
+The setup script will guide you through software selection with `yes/no` prompts. For each module:
+
+1. Confirm whether you want to install the software.
+2. Specify if you already have login credentials or need new ones created.
+3. Follow the on-screen prompts to verify and update credentials.
 
 ---
 
-## 1Password Integration 🔐
+## Credential Check 🔐
 
-Ensure that your 1Password is correctly configured. The following values should be stored in 1Password to avoid storing sensitive data in code:
+### Supported Credentials
 
-- **1Password Integration**
-  - Vault: 'PCWICV'
-  - Item: `API Credentials`
-  - Credential Name: `API Key`
+- **Cloudflare:** API token
+- **Cosmos Cloud:** Admin email, username, and password
+- **Grafana:** Admin password
+- **Home Assistant:** Username and password
+- **Node-RED:** Admin password
+- **Pi-hole:** Admin password
+- **Prometheus:** Integration key (if applicable)
+- **UniFi Controller:** Admin username and password
+- **GitHub:** Token and SSH key
+- **1Password:** Master password, secret key, and vault name
+- **Raspberry Pi:** Local username and password
 
-- **UniFi Controller**
-  - Vault: 'PCWICV'
-  - Item: `UniFi`
-  - Credential Name: `Admin Password`
+### Credential Check Workflow
 
-The Terraform workflow will interactively check 1Password for these values and prompt you if any are missing.
+1. The script will check 1Password for stored credentials for each selected service.
+2. If credentials are missing, it will prompt you to:
+   - Add them manually.
+   - Generate new credentials (if supported by the service).
+3. Once all credentials are verified, the installation process begins.
+
+---
+
+## Pi-hole Setup for DNS-Based Ad-Blocking 🚫
+
+Pi-hole will enhance your network security by blocking unwanted DNS queries:
+
+1. Install Pi-hole as a Docker container.
+2. Configure DNS settings to integrate with your network.
+3. Manage and monitor DNS queries via the Pi-hole web interface.
 
 ---
 
 ## Cosmos Cloud Setup ☁️
 
-Cosmos Cloud will serve as the front-end management platform. This setup will:
+Cosmos Cloud provides a centralized management platform:
 
-1. Deploy Cosmos Cloud on Docker.
-2. Configure necessary DNS and security settings with Cloudflare.
-
----
-
-## Home Assistant Setup 🏠
-
-Set up **Home Assistant** for smart home device integration. This module will:
-
-1. Install Home Assistant on your Raspberry Pi.
-2. Configure IoT devices and automation workflows.
-
----
-
-## Node-RED Integration 🔄
-
-Add **Node-RED** for creating and managing automation flows within Home Assistant:
-
-1. Deploy Node-RED as a Docker container.
-2. Configure Node-RED to communicate with Home Assistant for automation tasks.
-
----
-
-## Grafana Setup for Analytics 📊
-
-**Grafana** will visualize your data and provide analytics dashboards:
-
-1. Install Grafana as a Docker container.
-2. Configure it to pull data from Prometheus and other sources.
-
----
-
-## Prometheus Setup for Monitoring 📈
-
-**Prometheus** will handle system monitoring and alerting:
-
-1. Install Prometheus.
-2. Set up integrations with Grafana and configure alerting rules.
-
----
-
-## UniFi Controller for Identity Enterprise 🌐
-
-The **UniFi Controller** enables centralized network management:
-
-1. Deploy UniFi Controller as a Docker container.
-2. Integrate it with UniFi Identity Enterprise for SSO and App Launcher.
-
----
-
-## Database Setup 🗄️
-
-For data storage, choose between **MySQL** or **MongoDB**:
-
-1. Deploy the selected database on Docker.
-2. Configure database connections for Home Assistant and other services.
-
----
-
-## 1Password Connect Server for APIs 🌉
-
-**1Password Connect Server** enables secure API access:
-
-1. Deploy 1Password Connect Server.
-2. Integrate it with other components to securely manage secrets.
-
----
-
-## GitHub CLI and VS Code Extensions 💻
-
-Install **GitHub CLI** and other VS Code extensions for seamless development:
-
-1. Use the 1Password API to authenticate GitHub CLI.
-2. Ensure extensions are linked to the correct repositories and credentials.
-
----
-
-## Cloudflare Workers Setup for DDNS 🌐
-
-Set up **Cloudflare Workers** to manage DDNS and other services:
-
-1. Configure Workers using the Cloudflare API.
-2. Set up DDNS to dynamically manage domain records.
+1. Deploy Cosmos as a Docker container.
+2. Configure DNS and security settings.
 
 ---
 
 ## Dry Run and Installation 🚦
 
-Once all configurations are set:
+After selecting your software and verifying credentials:
 
-1. **Run a Dry Run**: The Terraform script will verify configurations and alert you to any missing information.
-2. **Begin Installation**: If the dry run completes successfully, the workflow will proceed with installation.
+1. **Run a Dry Run:** Ensures all configurations are complete.
+
+   ```bash
+   terraform apply -var-file=selection.tfvars -plan-only
+2. **Begin Installation:** Once the dry run passes, proceed with the installation.  
+Run:  
+`terraform apply -var-file=selection.tfvars`
+
+Follow the on-screen prompts to confirm any final configurations.
 
 ---
 
 ## Troubleshooting 🛠️
 
-If you encounter any issues during the setup:
+1. **Missing Credentials:**  
+Use the credential check module to verify missing items:  
+`terraform apply -target=module.credential_check`
 
-1. Review each module’s logs.
-2. Confirm that all necessary credentials are available in 1Password.
-3. Re-run the Terraform workflow, ensuring interactive prompts are addressed.
+2. **Service Installation Failures:**  
+Review logs for specific modules. Logs are generated for each module to aid in identifying the issue.
+
+3. **Re-run Terraform:**  
+If errors persist, rerun the Terraform workflow after resolving issues:  
+`terraform apply -var-file=selection.tfvars`
+
+4. **Consult Documentation:**  
+Refer to the official documentation of each software module for additional guidance.
 
 ---
 
-Feel free to reach out for assistance if any problems arise. Enjoy building your automated smart home system! 🚀
+Ready to start? Run the `setup.sh` script to kick off the process! 🚀

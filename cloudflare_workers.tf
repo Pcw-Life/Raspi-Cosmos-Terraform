@@ -1,11 +1,10 @@
-# Cloudflare Workers setup
-resource "cloudflare_worker_script" "ddns_worker" {
-  name = "ddns-worker"
-  content = file("${path.module}/workers/ddns_worker.js")
+# Cloudflare Workers
+provider "cloudflare" {
+  version = ">= 2.0.0"
+  api_token = var.cloudflare_api_token
 }
 
-resource "cloudflare_worker_route" "ddns_route" {
-  pattern = "example.com/ddns"
-  zone_id = var.cloudflare_zone_id
-  script_name = cloudflare_worker_script.ddns_worker.name
+resource "cloudflare_worker_script" "example" {
+  name = var.cloudflare_worker_name
+  content = file("path/to/worker/script.js")
 }

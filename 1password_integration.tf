@@ -1,7 +1,11 @@
 # 1Password Integration
-module "onepassword" {
-  source = "terraform-providers/1password"
-  
-  # 1Password configuration
-  api_key = var.onepassword_api_key
+provider "onepassword" {
+  version = ">= 1.0.0"
+  token   = var.onepassword_api_token
+}
+
+resource "onepassword_item" "example" {
+  vault    = var.onepassword_vault
+  title    = var.onepassword_item
+  category = "login"
 }
