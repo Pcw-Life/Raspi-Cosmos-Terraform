@@ -26,6 +26,7 @@ prompt_install "Grafana" install_grafana
 prompt_install "Prometheus" install_prometheus
 prompt_install "UniFi Controller" install_unifi
 prompt_install "MySQL or MongoDB" install_database
+prompt_install "Pi-hole" install_pihole
 
 # Check for 1Password CLI
 if ! command -v op &> /dev/null; then
@@ -43,7 +44,7 @@ fi
 
 # Check and manage required credentials in 1Password
 echo "🔍 Checking for required credentials in 1Password..."
-required_items=("cloudflare_api_token" "onepassword_api_key" "grafana_admin_password" "unifi_admin_password")
+required_items=("cloudflare_api_token" "onepassword_api_key" "grafana_admin_password" "unifi_admin_password" "pihole_password")
 
 for item in "${required_items[@]}"; do
     if ! op item get "$item" &> /dev/null; then
@@ -84,6 +85,7 @@ install_grafana = ${install_grafana}
 install_prometheus = ${install_prometheus}
 install_unifi = ${install_unifi}
 install_database = ${install_database}
+install_pihole = ${install_pihole}
 EOT
 
 echo "✅ Configuration saved to selection.tfvars."
@@ -91,4 +93,4 @@ echo "✅ Configuration saved to selection.tfvars."
 # Final instructions
 echo "🎉 Setup complete!"
 echo "You can now run the following command to apply your configuration:"
-echo "terraform apply -var-file=selection.tfvars"
+echo -e "\033[1;32mterraform apply -var-file=selection.tfvars\033[0m"

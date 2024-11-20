@@ -20,6 +20,17 @@ provider "docker" {
   host = "unix:///var/run/docker.sock"
 }
 
+variable "database_type" {
+  description = "The type of database to deploy (mysql or mongodb)"
+  type        = string
+}
+
+variable "install_cloudflare_workers" {
+  description = "Flag to determine if Cloudflare Workers should be installed"
+  type        = bool
+  default     = false
+}
+
 # 1Password integration for managing secure credentials
 module "onepassword_integration" {
   source = "./modules/1password_integration"
@@ -91,11 +102,4 @@ module "credential_check" {
   source = "./modules/credential_check"
   vault_name = var.onepassword_vault_name
   required_services = var.required_services
-}
-
-# Database Module
-module "database_setup" {
-  source = "./modules/database_setup"
-  count  = var.install_database ? 1 : 0
-  database_type = var.database_type
 }

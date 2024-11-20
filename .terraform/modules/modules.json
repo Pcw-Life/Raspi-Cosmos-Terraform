@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"bashrc_template","Source":"./local/bashrc","Dir":""},{"Key":"credential_check","Source":"./credential_check","Dir":""},{"Key":"pihole_setup","Source":"./pihole","Dir":""},{"Key":"zshrc_template","Source":"./local/zshrc","Dir":""}]}
