@@ -31,8 +31,6 @@ Welcome to the **PCW|Integrates Smarthome System Development** repository! This 
 
 ## Prerequisites ✅
 
-...
-
 Ensure you have the following installed and ready:
 
 - **1Password CLI and Desktop**
@@ -111,7 +109,9 @@ After selecting your software and verifying credentials:
 
 Run:  
 
-`terraform apply -var-file=selection.tfvars`
+```bash
+terraform apply -var-file=selection.tfvars
+```
 
 Follow the on-screen prompts to confirm any final configurations.
 
@@ -119,18 +119,24 @@ Follow the on-screen prompts to confirm any final configurations.
 
 ## Troubleshooting 🛠️
 
-1. **Missing Credentials:**  
+**Missing Credentials:**  
 Use the credential check module to verify missing items:  
-`terraform apply -target=module.credential_check`
 
-2. **Service Installation Failures:**  
+```bash
+terraform apply -target=module.credential_check
+```
+
+**Service Installation Failures:**  
 Review logs for specific modules. Logs are generated for each module to aid in identifying the issue.
 
-3. **Re-run Terraform:**  
+**Re-run Terraform:**  
 If errors persist, rerun the Terraform workflow after resolving issues:  
-`terraform apply -var-file=selection.tfvars`
 
-4. **Consult Documentation:**  
+```bash
+terraform apply -var-file=selection.tfvars
+```
+
+ **Consult Documentation:**  
 Refer to the official documentation of each software module for additional guidance.
 
 If you encounter any issues during the installation:
@@ -146,7 +152,7 @@ If you encounter any issues during the installation:
 
 To begin the setup, run the following command in your terminal:
 
-````bash
+```bash
 bash setup.sh
 ```
 
@@ -154,12 +160,14 @@ This script will guide you through the software selection process, generate the 
 
 1. **Navigate to the Repository Directory**  
    Ensure you are in the directory where the repository was cloned:
+
    ```bash
    cd /path/to/Raspi-Cosmos-Terraform
    ```
 
 2. **Run the Setup Script**  
    Execute the setup script to start the installation process:
+
    ```bash
    bash setup.sh
    ```
@@ -171,16 +179,18 @@ This script will guide you through the software selection process, generate the 
 
 4. **Run a Dry Run**  
    The setup script will automatically perform a dry run to validate the configuration:
+
    ```bash
    terraform plan -var-file=selection.tfvars
    ```
+
    - If any errors occur, the script will guide you through resolving them.
 
 5. **Apply the Configuration**  
    Once the dry run completes successfully, you can apply the configuration to deploy all selected services:
+
    ```bash
    terraform apply -var-file=selection.tfvars
    ```
 
 ---
-
