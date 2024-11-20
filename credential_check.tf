@@ -139,8 +139,8 @@ resource "null_resource" "credential_check" {
       fi
 
       # Check each required service's credentials in the specified vault
-      for service in ${!var.required_services[@]}; do
-        item_name=${var.required_services[service].item_name}
+      for service, details in pairs(var.required_services) {
+        item_name = details.item_name
         echo "🔍 Checking credentials for service: $service (Item: $item_name)..."
 
         if ! op item get "$item_name" --vault="${var.onepassword_vault_name}" &> /dev/null; then

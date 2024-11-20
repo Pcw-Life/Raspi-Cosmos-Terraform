@@ -4,16 +4,17 @@ Welcome to the **PCW|Integrates Smarthome System Development** repository! This 
 
 ---
 
-## **[➡️ CLICK HERE TO START THE INSTALLATION PROCESS](#dry-run-and-installation-)**  
+## Quick Start 🚀
 
-*See below for a detailed outline of the process.*
+[🚀 **CLICK HERE TO JUMP THE INSTALLATION PROCESS**](#how-to-start-the-installation)  
+(See below for a detailed outline of the process.)
 
 ---
 
 ## High-Level Setup Checklist 📋
 
 1. [PCW|Integrates Smarthome System Development 🚀](#pcwintegrates-smarthome-system-development-)
-   1. [**➡️ CLICK HERE TO START THE INSTALLATION PROCESS**](#️-click-here-to-start-the-installation-process)
+   1. [Quick Start 🚀](#quick-start-)
    2. [High-Level Setup Checklist 📋](#high-level-setup-checklist-)
    3. [Prerequisites ✅](#prerequisites-)
    4. [Software Selection 🛠️](#software-selection-️)
@@ -24,6 +25,7 @@ Welcome to the **PCW|Integrates Smarthome System Development** repository! This 
    7. [Cosmos Cloud Setup ☁️](#cosmos-cloud-setup-️)
    8. [Dry Run and Installation 🚦](#dry-run-and-installation-)
    9. [Troubleshooting 🛠️](#troubleshooting-️)
+   10. [How to Start the Installation](#how-to-start-the-installation)
 
 ---
 
@@ -103,8 +105,12 @@ After selecting your software and verifying credentials:
 
    ```bash
    terraform apply -var-file=selection.tfvars -plan-only
+   ```
+
 2. **Begin Installation:** Once the dry run passes, proceed with the installation.  
+
 Run:  
+
 `terraform apply -var-file=selection.tfvars`
 
 Follow the on-screen prompts to confirm any final configurations.
@@ -127,6 +133,54 @@ If errors persist, rerun the Terraform workflow after resolving issues:
 4. **Consult Documentation:**  
 Refer to the official documentation of each software module for additional guidance.
 
+If you encounter any issues during the installation:
+
+- **Check Logs:** Review any error messages displayed during the setup.
+- **Verify Credentials:** Ensure all required credentials exist and are labeled correctly in 1Password.
+- **Re-run the Script:** Re-run `setup.sh` after resolving any issues.
+- **Seek Help:** Refer to the documentation or contact support if problems persist.
+
 ---
 
-Ready to start? Run the `setup.sh` script to kick off the process! 🚀
+## How to Start the Installation
+
+To begin the setup, run the following command in your terminal:
+
+````bash
+bash setup.sh
+```
+
+This script will guide you through the software selection process, generate the necessary configuration files, and prepare the system for installation.
+
+1. **Navigate to the Repository Directory**  
+   Ensure you are in the directory where the repository was cloned:
+   ```bash
+   cd /path/to/Raspi-Cosmos-Terraform
+   ```
+
+2. **Run the Setup Script**  
+   Execute the setup script to start the installation process:
+   ```bash
+   bash setup.sh
+   ```
+
+3. **Follow the Prompts**  
+   - The script will ask you to select which software packages to install.
+   - It will check your 1Password vault for credentials and guide you to create or correct any missing items.
+   - A `selection.tfvars` file will be generated based on your choices.
+
+4. **Run a Dry Run**  
+   The setup script will automatically perform a dry run to validate the configuration:
+   ```bash
+   terraform plan -var-file=selection.tfvars
+   ```
+   - If any errors occur, the script will guide you through resolving them.
+
+5. **Apply the Configuration**  
+   Once the dry run completes successfully, you can apply the configuration to deploy all selected services:
+   ```bash
+   terraform apply -var-file=selection.tfvars
+   ```
+
+---
+

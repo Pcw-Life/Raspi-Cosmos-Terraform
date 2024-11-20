@@ -1,3 +1,8 @@
+variable "database_type" {
+  description = "The type of database to deploy (mysql or mongodb)"
+  type        = string
+}
+
 # Database setup (MySQL or MongoDB)
 resource "docker_container" "database" {
   count = var.database_type == "mysql" ? 1 : 0

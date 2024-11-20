@@ -20,6 +20,17 @@ provider "docker" {
   host = "unix:///var/run/docker.sock"
 }
 
+variable "database_type" {
+  description = "The type of database to deploy (mysql or mongodb)"
+  type        = string
+}
+
+variable "install_cloudflare_workers" {
+  description = "Flag to determine if Cloudflare Workers should be installed"
+  type        = bool
+  default     = false
+}
+
 # 1Password integration for managing secure credentials
 module "onepassword_integration" {
   source = "terraform-providers/1password"
