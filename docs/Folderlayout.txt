@@ -1,0 +1,99 @@
+ .github
+│   ├── environments
+│   │   ├── julianspi.env
+│   │   └── servingpi.env
+│   └── workflows
+│       └── ci-pipeline.yml
+├── .gitignore
+├── .vscode
+│   └── settings.json
+├── CNAME
+├── Cosmos-Terraform-Setup.code-workspace
+├── LICENSE
+├── README.md
+├── cosmos
+│   └── cosmos-compose
+│       ├── grafana-compose.yml
+│       ├── home-assistant-compose.yml
+│       ├── node-red-compose.yml
+│       ├── pi-hole-compose.yml
+│       └── unifi-controller-compose.yml
+├── docs
+│   ├── .DS_Store
+│   ├── 1Password_Credential_Setup.md
+│   ├── Folderlayout.txt
+│   ├── create_structure.sh
+│   ├── images
+│   │   ├── .DS_Store
+│   │   ├── Terraform-diagram.png
+│   │   ├── Workflow-diagram.png
+│   │   └── logo.png
+│   └── {references.md}
+├── folders_structure.txt
+├── scripts
+│   ├── checks.sh
+│   ├── installer.sh
+│   └── setup
+│       ├── 1password.sh
+│       ├── additional-services
+│       │   ├── grafana
+│       │   │   └── grafana.sh
+│       │   ├── home-assistant
+│       │   │   └── home-assistant.sh
+│       │   ├── node-red
+│       │   │   └── node-red.sh
+│       │   ├── pi-hole
+│       │   │   └── pihole.sh
+│       │   └── unifi-controller
+│       │       └── unifi-controller.sh
+│       ├── cosmos-cloud.sh
+│       ├── docker.sh
+│       ├── fetch_op_secrets.sh
+│       └── terraform.sh
+└── terraform
+    ├── main.tf
+    ├── modules
+    │   ├── 1password
+    │   │   ├── main.tf
+    │   │   ├── outputs.tf
+    │   │   └── variables.tf
+    │   ├── additional-services
+    │   │   ├── grafana
+    │   │   │   ├── main.tf
+    │   │   │   ├── outputs.tf
+    │   │   │   └── variables.tf
+    │   │   ├── home-assistant
+    │   │   │   ├── main.tf
+    │   │   │   ├── outputs.tf
+    │   │   │   └── variables.tf
+    │   │   ├── node-red
+    │   │   │   ├── main.tf
+    │   │   │   ├── outputs.tf
+    │   │   │   └── variables.tf
+    │   │   ├── pi-hole
+    │   │   │   ├── main.tf
+    │   │   │   ├── outputs.tf
+    │   │   │   └── variables.tf
+    │   │   └── unifi-controller
+    │   │       ├── firewall_rules.tf
+    │   │       ├── main.tf
+    │   │       ├── outputs.tf
+    │   │       └── variables.tf
+    │   ├── cosmos-cloud
+    │   │   ├── main.tf
+    │   │   ├── outputs.tf
+    │   │   └── variables.tf
+    │   ├── docker
+    │   │   ├── main.tf
+    │   │   ├── outputs.tf
+    │   │   └── variables.tf
+    │   └── terraform
+    │       ├── main.tf
+    │       ├── outputs.tf
+    │       └── variables.tf
+    ├── outputs.tf
+    ├── providers.tf
+    ├── terraform providers
+    └── variables.tf
+
+118 directories, 185 files

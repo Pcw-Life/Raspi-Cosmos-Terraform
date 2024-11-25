@@ -1,0 +1,15 @@
+
+version: "3.9"
+services:
+  pihole:
+    image: pihole/pihole
+    container_name: pihole
+    ports:
+      - "8081:80"
+    volumes:
+      - pihole_data:/etc/pihole
+    environment:
+      - TZ=${PIHOLE_TIMEZONE}
+      - WEBPASSWORD=${PIHOLE_ADMIN_PASS}
+volumes:
+  pihole_data:

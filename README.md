@@ -1,196 +1,162 @@
-# PCW|Integrates Smarthome System Development 🚀
 
-Welcome to the **PCW|Integrates Smarthome System Development** repository! This setup automates the installation and configuration of a comprehensive smart home system with network management, monitoring, and automation features.
+# 🌟 Cosmos Smarthome System Development
 
----
+### **🌍 Project Overview**
 
-## Quick Start 🚀
-
-[🚀 **CLICK HERE TO JUMP THE INSTALLATION PROCESS**](#how-to-start-the-installation)  
-(See below for a detailed outline of the process.)
+Welcome to the Cosmos Smarthome System Development repository! This project provides an end-to-end solution for setting up a comprehensive smarthome system using Terraform, Docker, Cosmos Cloud, and other optional services. It enables seamless integration, secure credential management, and a modular setup for extensibility.
 
 ---
 
-## High-Level Setup Checklist 📋
+### **✨ Key Features**
 
-1. [PCW|Integrates Smarthome System Development 🚀](#pcwintegrates-smarthome-system-development-)
-   1. [Quick Start 🚀](#quick-start-)
-   2. [High-Level Setup Checklist 📋](#high-level-setup-checklist-)
-   3. [Prerequisites ✅](#prerequisites-)
-   4. [Software Selection 🛠️](#software-selection-️)
-   5. [Credential Check 🔐](#credential-check-)
-      1. [Supported Credentials](#supported-credentials)
-      2. [Credential Check Workflow](#credential-check-workflow)
-   6. [Pi-hole Setup for DNS-Based Ad-Blocking 🚫](#pi-hole-setup-for-dns-based-ad-blocking-)
-   7. [Cosmos Cloud Setup ☁️](#cosmos-cloud-setup-️)
-   8. [Dry Run and Installation 🚦](#dry-run-and-installation-)
-   9. [Troubleshooting 🛠️](#troubleshooting-️)
-   10. [How to Start the Installation](#how-to-start-the-installation)
+- ✨ **Interactive Installer**: Automatically set up required software and manage optional add-ons.
+- ⚙️ **Terraform Modules**: Provision infrastructure with minimal manual intervention.
+- 🌐 **Cosmos Cloud Integration**: Simplify app management with ServApps and Cosmos Compose.
+- 🔐 **1Password Integration**: Securely manage credentials for all services.
+- 🚀 **GitHub Actions**: Automate and validate configurations through CI/CD pipelines.
+
+[🔝 Back to Top](#🌟-cosmos-smarthome-system-development)
 
 ---
 
-## Prerequisites ✅
+### **📦 Software Packages**
 
-Ensure you have the following installed and ready:
+Here’s the list of software packages included in this project:
 
-- **1Password CLI and Desktop**
-- **Docker** (on Raspberry Pi and MacBook Pro)
-- **GitHub Account**
-- **Cloudflare Account** (with API tokens)
+**Required:**
 
----
+- 🔐 **1Password CLI**: Securely manage credentials.
+- 🐙 **GitHub CLI**: Interact with GitHub repositories from the command line.
+- 🐳 **Docker**: Containerization platform for running applications.
+- ☁️ **Cloudflare Account**: Manage DNS, security, and networking services.
+- 🔑 **1Password Connect Server**: API-based access to secure credentials.
+- 🛠️ **Terraform**: Infrastructure as code for provisioning and managing resources.
+- 🪐 **Cosmos Cloud**: Simplify service deployment with ServApps.
 
-## Software Selection 🛠️
+**Optional Software:**
 
-The setup script will guide you through software selection with `yes/no` prompts. For each module:
+- 🏠 **Home Assistant**: Home automation platform.
+- 🧑‍💻 **Node-RED**: Low-code programming for event-driven applications.
+- 📊 **Grafana Suite**: Includes all Grafana-related packages from Docker Hub.
+- 🎛️ **Pi-hole**: Network-wide ad blocker.
+- 📈 **Prometheus**: Monitoring system and time-series database.
+- 🐶 **Datadog**: Cloud monitoring and security platform.
+- 📦 **Portainer**: Docker container management GUI.
 
-1. Confirm whether you want to install the software.
-2. Specify if you already have login credentials or need new ones created.
-3. Follow the on-screen prompts to verify and update credentials.
+<div style="position: relative; width: 100%; height: 0; padding-top: 77.2727%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https://www.canva.com/design/DAGXNDQ8jNk/8-l-i9BOQFnP_PI1QLBQrA/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGXNDQ8jNk&#x2F;8-l-i9BOQFnP_PI1QLBQrA&#x2F;view?utm_content=DAGXNDQ8jNk&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Terraform Infastructure</a> by PCWPROPS LLC
 
----
-
-## Credential Check 🔐
-
-### Supported Credentials
-
-- **Cloudflare:** API token
-- **Cosmos Cloud:** Admin email, username, and password
-- **Grafana:** Admin password
-- **Home Assistant:** Username and password
-- **Node-RED:** Admin password
-- **Pi-hole:** Admin password
-- **Prometheus:** Integration key (if applicable)
-- **UniFi Controller:** Admin username and password
-- **GitHub:** Token and SSH key
-- **1Password:** Master password, secret key, and vault name
-- **Raspberry Pi:** Local username and password
-
-### Credential Check Workflow
-
-1. The script will check 1Password for stored credentials for each selected service.
-2. If credentials are missing, it will prompt you to:
-   - Add them manually.
-   - Generate new credentials (if supported by the service).
-3. Once all credentials are verified, the installation process begins.
+[🔝 Back to Top](#🌟-cosmos-smarthome-system-development)
 
 ---
 
-## Pi-hole Setup for DNS-Based Ad-Blocking 🚫
+### **🔗 Fork Me**
 
-Pi-hole will enhance your network security by blocking unwanted DNS queries:
+Want to use this project for your setup? Fork this repository and make it your own!
 
-1. Install Pi-hole as a Docker container.
-2. Configure DNS settings to integrate with your network.
-3. Manage and monitor DNS queries via the Pi-hole web interface.
+#### **How to Fork and Use**
 
----
-
-## Cosmos Cloud Setup ☁️
-
-Cosmos Cloud provides a centralized management platform:
-
-1. Deploy Cosmos as a Docker container.
-2. Configure DNS and security settings.
-
----
-
-## Dry Run and Installation 🚦
-
-After selecting your software and verifying credentials:
-
-1. **Run a Dry Run:** Ensures all configurations are complete.
+1. Click the **Fork** button in the top-right corner of the repository page.
+2. Clone your fork to your local machine:
 
    ```bash
-   terraform apply -var-file=selection.tfvars -plan-only
+   git clone https://github.com/<your-username>/Cosmos-Smarthome.git
+   cd Cosmos-Smarthome
    ```
 
-2. **Begin Installation:** Once the dry run passes, proceed with the installation.  
+3. Follow the [GitHub Actions Setup](#🔧-step-by-step-setup) section to configure your environment.
 
-Run:  
+#### **Collaborate and Contribute**
 
-```bash
-terraform apply -var-file=selection.tfvars
-```
+- 🐛 [Open an Issue](https://github.com/your-repo/issues) to report bugs or request features.
+- 💬 [Join Discussions](https://github.com/your-repo/discussions) to share ideas or ask questions.
+- 🔄 [Submit Pull Requests](https://github.com/your-repo/pulls) to contribute improvements or fixes.
 
-Follow the on-screen prompts to confirm any final configurations.
+[📦 Go to Software Packages](#📦-software-packages)
 
 ---
 
-## Troubleshooting 🛠️
+### **🤝 Sponsor Me**
 
-**Missing Credentials:**  
-Use the credential check module to verify missing items:  
+Support the continued development and maintenance of this project! Sponsorships help fund future enhancements and ensure the project remains active.
 
-```bash
-terraform apply -target=module.credential_check
-```
+#### **How to Sponsor**
 
-**Service Installation Failures:**  
-Review logs for specific modules. Logs are generated for each module to aid in identifying the issue.
+- Visit the **Sponsor** section on the repository page.
+- Choose a sponsorship tier and join the community of supporters!
 
-**Re-run Terraform:**  
-If errors persist, rerun the Terraform workflow after resolving issues:  
-
-```bash
-terraform apply -var-file=selection.tfvars
-```
-
- **Consult Documentation:**  
-Refer to the official documentation of each software module for additional guidance.
-
-If you encounter any issues during the installation:
-
-- **Check Logs:** Review any error messages displayed during the setup.
-- **Verify Credentials:** Ensure all required credentials exist and are labeled correctly in 1Password.
-- **Re-run the Script:** Re-run `setup.sh` after resolving any issues.
-- **Seek Help:** Refer to the documentation or contact support if problems persist.
+[🔝 Back to Top](#🌟-cosmos-smarthome-system-development)
 
 ---
 
-## How to Start the Installation
+### **🔧 Step-by-Step Setup**
 
-To begin the setup, run the following command in your terminal:
+#### **1️⃣ Prerequisites**
 
-```bash
-bash setup.sh
-```
+Ensure the following are installed:
 
-This script will guide you through the software selection process, generate the necessary configuration files, and prepare the system for installation.
+- Git
+- Docker
+- Terraform
+- 1Password CLI
 
-1. **Navigate to the Repository Directory**  
-   Ensure you are in the directory where the repository was cloned:
+#### **2️⃣ Environment Configuration**
 
-   ```bash
-   cd /path/to/Raspi-Cosmos-Terraform
-   ```
+- Add `OP_CONNECT_HOST` and `OP_CONNECT_TOKEN` to your GitHub repository's environments:
+  1. Go to **Settings > Environments**.
+  2. Create or update the environments for ServingPi and JuliansPi.
+  3. Add the required variables securely.
 
-2. **Run the Setup Script**  
-   Execute the setup script to start the installation process:
+#### **3️⃣ Run the Installer**
 
-   ```bash
-   bash setup.sh
-   ```
-
-3. **Follow the Prompts**  
-   - The script will ask you to select which software packages to install.
-   - It will check your 1Password vault for credentials and guide you to create or correct any missing items.
-   - A `selection.tfvars` file will be generated based on your choices.
-
-4. **Run a Dry Run**  
-   The setup script will automatically perform a dry run to validate the configuration:
+1. Clone the repository:
 
    ```bash
-   terraform plan -var-file=selection.tfvars
+   git clone https://github.com/<your-username>/Cosmos-Smarthome.git
+   cd Cosmos-Smarthome
    ```
 
-   - If any errors occur, the script will guide you through resolving them.
-
-5. **Apply the Configuration**  
-   Once the dry run completes successfully, you can apply the configuration to deploy all selected services:
+2. Run the interactive installer:
 
    ```bash
-   terraform apply -var-file=selection.tfvars
+   bash scripts/installer.sh
    ```
+
+3. Follow the prompts to install and configure services.
+
+#### **4️⃣ Post-Setup**
+
+- Use Terraform and Cosmos Cloud for managing infrastructure and services.
+- Reference additional resources in the [💡 Resources and Acknowledgments](#💡-resources-and-acknowledgments) section.
+
+[🔝 Back to Top](#🌟-cosmos-smarthome-system-development)
 
 ---
+
+### **💡 Resources and Acknowledgments**
+
+#### **Official Links**
+
+- [🔐 1Password CLI Documentation](https://developer.1password.com/docs/cli)
+- [🛠️ Terraform Documentation](https://www.terraform.io/docs)
+- [🪐 Cosmos Cloud Documentation](https://cosmos-cloud.io/doc)
+
+#### **Acknowledgments**
+
+- 🙌 Thanks to the open-source community for tools and resources.
+- ⭐ Special thanks to contributors who made this project possible.
+
+[🔝 Back to Top](#🌟-cosmos-smarthome-system-development)
+
+---
+
+### **🔗 Fork Me & 🤝 Sponsor Me**
+
+- [Fork This Repository 🔗](#🔗-fork-me)
+- [Sponsor This Project 🤝](#🤝-sponsor-me)

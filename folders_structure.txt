@@ -1,0 +1,305 @@
+.
+├── .DS_Store
+├── .git
+│   ├── COMMIT_EDITMSG
+│   ├── FETCH_HEAD
+│   ├── HEAD
+│   ├── ORIG_HEAD
+│   ├── config
+│   ├── description
+│   ├── hooks
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── pre-merge-commit.sample
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── pre-receive.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   ├── push-to-checkout.sample
+│   │   ├── sendemail-validate.sample
+│   │   └── update.sample
+│   ├── index
+│   ├── info
+│   │   └── exclude
+│   ├── logs
+│   │   ├── HEAD
+│   │   └── refs
+│   │       ├── heads
+│   │       │   └── MASTER
+│   │       └── remotes
+│   │           └── origin
+│   │               ├── HEAD
+│   │               └── MASTER
+│   ├── objects
+│   │   ├── 00
+│   │   │   └── 63fccdc247046b4a5dbc1a64e747ff0384e499
+│   │   ├── 02
+│   │   │   ├── 8a6dc2cd925635536fa865699535e5ff455500
+│   │   │   └── e3a6a37862637a8cc052359f1bd996e9d74445
+│   │   ├── 03
+│   │   │   └── 648fadc8bc37eb6bba366b275474004deea8ad
+│   │   ├── 08
+│   │   │   └── e8bd8b5ad17345784ad73aa6a9ec75ee6b5883
+│   │   ├── 0a
+│   │   │   └── e56256b1837b5371720a0f09e6542fad632a40
+│   │   ├── 0b
+│   │   │   └── 01a9ae17eba57878ec2799cd5d5b36b33edfab
+│   │   ├── 0e
+│   │   │   └── ef347d429928892f30f3c8ca5091df438df2e1
+│   │   ├── 0f
+│   │   │   └── dced0f94622897b2d983f0d029cda032e00b54
+│   │   ├── 10
+│   │   │   └── ab8176e95be4d242842a0c8da1c3d1f6ddd993
+│   │   ├── 13
+│   │   │   └── e989c1acc46ad0ca9e2ee46a55c62a77d7363d
+│   │   ├── 15
+│   │   │   └── 8c05f6e4358387e79eadd50703fbc75ec9de74
+│   │   ├── 1c
+│   │   │   └── 34d30f4875b6a401d0891734ab54989d6fd0dd
+│   │   ├── 1d
+│   │   │   └── 4a984827a1b84921bd285251678e4376b298b4
+│   │   ├── 23
+│   │   │   └── fc4e8124106d0e721966ae2a815b58681feb19
+│   │   ├── 25
+│   │   │   └── c9bf034d245294b0e48cdc03bcd8c2d85ccc94
+│   │   ├── 26
+│   │   │   └── 88499f45623579d932383cc405ee21eaf0ffb0
+│   │   ├── 28
+│   │   │   └── 9bf4a04d645e68e2ceaad8c01b652034738cb0
+│   │   ├── 2f
+│   │   │   └── b11bae5cb2fc171e71aa44b5b79c035d528c50
+│   │   ├── 30
+│   │   │   └── 50fbacc0e19011a958fe9f9952f6e19e87461c
+│   │   ├── 34
+│   │   │   └── 7d9c95660c4ba4f49e55e0f082206a2ff003e9
+│   │   ├── 36
+│   │   │   └── 69cead6dbfe562c9e59fb4ae2fe54095510a50
+│   │   ├── 37
+│   │   │   └── fa2269f7cdf8246e33225868b2a5c11a921669
+│   │   ├── 38
+│   │   │   └── 63ab4d4d962d434c97abc50a3005cf9b38b1b8
+│   │   ├── 3a
+│   │   │   ├── 58c01958790b128130196614287c630e92cc3c
+│   │   │   └── b71032f35fe83967b5708b17582c0e3567a9c6
+│   │   ├── 3e
+│   │   │   └── 2624e83ea5aa638bb404b5a288fd9ae148e266
+│   │   ├── 40
+│   │   │   ├── 362614a01400e6b4531facf798ed7490c55b66
+│   │   │   └── cfad5c7a0fe5cc1f128ca07127e1b88c3a5d9f
+│   │   ├── 41
+│   │   │   └── d3dd1456a9797e5ee569a42bf2fd1c573999a8
+│   │   ├── 44
+│   │   │   ├── 1ccd1e2452860df8c09434cafdc0db7a4d84c7
+│   │   │   └── 3afff6f329880019ce348e963cb99f517406b6
+│   │   ├── 45
+│   │   │   └── 3e385be035d28d86b0b40e7d33ec303551f3b2
+│   │   ├── 46
+│   │   │   └── 228b9552147a7d261bda30912e69be594f02ce
+│   │   ├── 48
+│   │   │   └── 8d8ac82cf4540b313250f0affdc05a2982dba0
+│   │   ├── 53
+│   │   │   └── d8d6ac2de241dbb47c54256545863de9dc6738
+│   │   ├── 5b
+│   │   │   └── 9cd7dcacf1aa999e2eb4f0c5e95d9fabf282e7
+│   │   ├── 5e
+│   │   │   └── b0e3b58366b5b9e9c43ed9920af144fa2ca885
+│   │   ├── 60
+│   │   │   └── 8dd69f1080bc6226242988acf6933225aafa88
+│   │   ├── 68
+│   │   │   └── 5d492532c4d5d771482d0c76d39772eed3278a
+│   │   ├── 6c
+│   │   │   └── f22581538a04ae8bb809a4b9d6e1bdb333514b
+│   │   ├── 6f
+│   │   │   └── a2993aefe089bab02031d7be87fab1505913fa
+│   │   ├── 73
+│   │   │   └── cfdfb75a8b605b6bffaf704a26fd0b65d2beb5
+│   │   ├── 75
+│   │   │   └── 8c60869759c8cca6f4bfa47a482cea3de7a4cd
+│   │   ├── 7a
+│   │   │   ├── 510bab4b16444afb32f0f5b74e249db3088eef
+│   │   │   ├── 5a297af36e3dffd9eb3963b5299d4dee554042
+│   │   │   └── b5f0903d1963a6f8561978f0a1d0079133828d
+│   │   ├── 7b
+│   │   │   ├── 317f65656756bf2560cbefcf6f9f21964e9f3d
+│   │   │   └── 356ec90a13c3e5fea6347d229958627cce14cc
+│   │   ├── 84
+│   │   │   ├── 26c262f849369bc54df5e69b5c8a168443e7f3
+│   │   │   └── bfdb694280a350f02d467a88afd936d10e9852
+│   │   ├── 88
+│   │   │   └── e486bf1832950a97d62116616405906b81d0c8
+│   │   ├── 8b
+│   │   │   └── 2530e1340a8302f0cca1fa24f97da9e57165ef
+│   │   ├── 8d
+│   │   │   ├── 0ecddee3dbce9a250f37bb32e08e4b5bbc37f4
+│   │   │   └── fd678fb8b3aacdc5c3b1704b522a00953d031a
+│   │   ├── 90
+│   │   │   └── 66ffcba6e68a90221fad5a809f5129f28cd12a
+│   │   ├── 9c
+│   │   │   └── 15b1ea5d496eac8af87a60e530fd9ad77ad849
+│   │   ├── 9e
+│   │   │   ├── 48d92c9eda6fa10662ed4f6d4aaae08837650c
+│   │   │   └── 5815f96f69efc22e59d0e5d006d2f3f940d627
+│   │   ├── a4
+│   │   │   └── c9610592c5d28c558da3ecd8fa3db9ed290940
+│   │   ├── a9
+│   │   │   └── 0977d7e71d4aaeb371183e98c893fd028a8796
+│   │   ├── ae
+│   │   │   └── 3fd863ed7c24de598cbf759393cc1e864f648b
+│   │   ├── b0
+│   │   │   └── 3ec5eaac682e83beca253767ddbe5e96a7a389
+│   │   ├── b4
+│   │   │   └── 82d1c05942015957d3333ebe5de8ea1cad371a
+│   │   ├── b9
+│   │   │   └── 82070bfad956bf6e446bf3802f403947024d09
+│   │   ├── ba
+│   │   │   └── 4b3cf8860a788f99a48e0e4776997440d03054
+│   │   ├── c9
+│   │   │   └── f7852e80554322a75a6433d73dbf051bcaebc6
+│   │   ├── d3
+│   │   │   └── 45b4d1536a54f620d028b0c997e78d3ca9668a
+│   │   ├── d5
+│   │   │   └── 167b1dd380ce7dd2d0bcdd033eaafd5f40ea47
+│   │   ├── d8
+│   │   │   ├── 64c43e1424ea549ea65dbb1d6531b8196fc370
+│   │   │   └── c97de1493eaac1068d23444224a3b9bb02009b
+│   │   ├── da
+│   │   │   └── 32cd317d7efa0f3c00442a3f853120f827394a
+│   │   ├── db
+│   │   │   └── 91be4981a554922faf8903720660b9c8bd3111
+│   │   ├── dc
+│   │   │   └── fb46febbec73881f88ddd9578370d739a7f2c7
+│   │   ├── e1
+│   │   │   └── d34a8260eb1cdc16c846535b8fa0c4c790677e
+│   │   ├── e4
+│   │   │   └── 4d526f5b18b87e71e63e9453eb3adce4955bf3
+│   │   ├── e6
+│   │   │   └── 9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+│   │   ├── e7
+│   │   │   └── f74f9e41621d6554fad49e701795e5a509f135
+│   │   ├── e8
+│   │   │   └── 8f1d36cf09ffc1a93635eb5876e9f84c712ea4
+│   │   ├── eb
+│   │   │   └── 820a8ddc7905ff91465ed7d0e31768db325273
+│   │   ├── ed
+│   │   │   └── 68f00e1d8b2ce4cd4fce0046a23cf398907ba7
+│   │   ├── ef
+│   │   │   └── fce42a2544861285dd596e1985eae4bdb0a4d5
+│   │   ├── fe
+│   │   │   └── c297bcd8c2f306249238e312f471ceb0c7c91f
+│   │   ├── info
+│   │   └── pack
+│   │       ├── pack-f623f79a9e59e68a9bf331eff686fd710d5f51b8.idx
+│   │       ├── pack-f623f79a9e59e68a9bf331eff686fd710d5f51b8.pack
+│   │       └── pack-f623f79a9e59e68a9bf331eff686fd710d5f51b8.rev
+│   ├── packed-refs
+│   └── refs
+│       ├── heads
+│       │   └── MASTER
+│       ├── remotes
+│       │   └── origin
+│       │       ├── HEAD
+│       │       └── MASTER
+│       └── tags
+├── .github
+│   ├── environments
+│   │   ├── julianspi.env
+│   │   └── servingpi.env
+│   └── workflows
+│       └── ci-pipeline.yml
+├── .gitignore
+├── .vscode
+│   └── settings.json
+├── CNAME
+├── Cosmos-Terraform-Setup.code-workspace
+├── LICENSE
+├── README.md
+├── cosmos
+│   └── cosmos-compose
+│       ├── grafana-compose.yml
+│       ├── home-assistant-compose.yml
+│       ├── node-red-compose.yml
+│       ├── pi-hole-compose.yml
+│       └── unifi-controller-compose.yml
+├── docs
+│   ├── .DS_Store
+│   ├── 1Password_Credential_Setup.md
+│   ├── Folderlayout.txt
+│   ├── create_structure.sh
+│   ├── images
+│   │   ├── .DS_Store
+│   │   ├── Terraform-diagram.png
+│   │   ├── Workflow-diagram.png
+│   │   └── logo.png
+│   └── {references.md}
+├── folders_structure.txt
+├── scripts
+│   ├── checks.sh
+│   ├── installer.sh
+│   └── setup
+│       ├── 1password.sh
+│       ├── additional-services
+│       │   ├── grafana
+│       │   │   └── grafana.sh
+│       │   ├── home-assistant
+│       │   │   └── home-assistant.sh
+│       │   ├── node-red
+│       │   │   └── node-red.sh
+│       │   ├── pi-hole
+│       │   │   └── pihole.sh
+│       │   └── unifi-controller
+│       │       └── unifi-controller.sh
+│       ├── cosmos-cloud.sh
+│       ├── docker.sh
+│       ├── fetch_op_secrets.sh
+│       └── terraform.sh
+└── terraform
+    ├── main.tf
+    ├── modules
+    │   ├── 1password
+    │   │   ├── main.tf
+    │   │   ├── outputs.tf
+    │   │   └── variables.tf
+    │   ├── additional-services
+    │   │   ├── grafana
+    │   │   │   ├── main.tf
+    │   │   │   ├── outputs.tf
+    │   │   │   └── variables.tf
+    │   │   ├── home-assistant
+    │   │   │   ├── main.tf
+    │   │   │   ├── outputs.tf
+    │   │   │   └── variables.tf
+    │   │   ├── node-red
+    │   │   │   ├── main.tf
+    │   │   │   ├── outputs.tf
+    │   │   │   └── variables.tf
+    │   │   ├── pi-hole
+    │   │   │   ├── main.tf
+    │   │   │   ├── outputs.tf
+    │   │   │   └── variables.tf
+    │   │   └── unifi-controller
+    │   │       ├── firewall_rules.tf
+    │   │       ├── main.tf
+    │   │       ├── outputs.tf
+    │   │       └── variables.tf
+    │   ├── cosmos-cloud
+    │   │   ├── main.tf
+    │   │   ├── outputs.tf
+    │   │   └── variables.tf
+    │   ├── docker
+    │   │   ├── main.tf
+    │   │   ├── outputs.tf
+    │   │   └── variables.tf
+    │   └── terraform
+    │       ├── main.tf
+    │       ├── outputs.tf
+    │       └── variables.tf
+    ├── outputs.tf
+    ├── providers.tf
+    ├── terraform providers
+    └── variables.tf
+
+118 directories, 185 files

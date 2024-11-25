@@ -1,0 +1,12 @@
+
+version: "3.9"
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "${GRAFANA_PORT}:${GRAFANA_PORT}"
+    environment:
+      - GF_SECURITY_ADMIN_USER=${ADMIN_USERNAME}
+      - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - GF_SECURITY_API_TOKEN=${GRAFANA_API_TOKEN}

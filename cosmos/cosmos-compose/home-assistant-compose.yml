@@ -1,0 +1,16 @@
+
+version: "3.9"
+services:
+  home-assistant:
+    image: homeassistant/home-assistant
+    container_name: home-assistant
+    ports:
+      - "8123:8123"
+    volumes:
+      - home_assistant_data:/config
+    environment:
+      - ADMIN_EMAIL=${HA_ADMIN_EMAIL}
+      - ADMIN_USERNAME=${HA_ADMIN_USER}
+      - ADMIN_PASSWORD=${HA_ADMIN_PASS}
+volumes:
+  home_assistant_data:

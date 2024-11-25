@@ -1,0 +1,13 @@
+Project Description
+
+“Welcome to our network architecture overview, showcasing the integration of Terraform and its seamless orchestration with our core systems. At the heart of this setup is Terraform, our infrastructure-as-code tool that efficiently manages and automates the provisioning of resources across all systems.
+
+From Terraform, our architecture branches into three core components: the MacBook Pro, the Raspberry Pi, and the UniFi Dream Machine SE.
+
+First, let’s explore the MacBook Pro. This device serves as a management hub, leveraging tools like VS Code for development and GitHub for version control. Within VS Code, Docker enables containerized environments, OhMyPosh customizes the terminal experience, Remote SSH facilitates secure server connections, and Homebrew streamlines package management. Additionally, Raspberry Pi Connect links the MacBook Pro directly to the Raspberry Pi for remote shell access and screen sharing.
+
+Next, we have the Raspberry Pi, a versatile platform running Docker, which powers Cosmos Cloud. Within Cosmos Cloud, we’ve structured the system into required and optional software. Required tools include 1Password CLI for secure credential management, GitHub CLI for repository interaction, Docker for containerization, Cloudflare for DNS and security services, 1Password Connect Server for API-based credentials, and Terraform itself for resource provisioning. Optional software such as Home Assistant, Node-RED, Grafana Suite, Pi-hole, Prometheus, Datadog, and Portainer provide extended functionalities like automation, monitoring, and management.
+
+Finally, the UniFi Dream Machine SE acts as the backbone of our network infrastructure. It features Identity Enterprise, which integrates mobile device management, an SSO app launcher, and site management. Additional services include Verify for identity verification, UniFi UI for centralized network control, and API access for advanced customizations. It also supports WiFi Man for network diagnostics, along with network, Protect for security cameras, InnerSpace for enhanced IoT connectivity, and the Gateway for unified access.
+
+This architecture creates a cohesive, scalable system, efficiently managed through Terraform. Each component works in harmony, streamlining workflows, enhancing security, and providing robust infrastructure for our operations.”

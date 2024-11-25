@@ -1,0 +1,15 @@
+
+version: "3.9"
+services:
+  node-red:
+    image: nodered/node-red
+    container_name: node-red
+    ports:
+      - "1880:1880"
+    volumes:
+      - node_red_data:/data
+    environment:
+      - ADMIN_USERNAME=${NODE_RED_USER}
+      - ADMIN_PASSWORD=${NODE_RED_PASS}
+volumes:
+  node_red_data:

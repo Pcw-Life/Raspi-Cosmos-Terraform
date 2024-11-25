@@ -1,0 +1,15 @@
+
+version: "3.9"
+services:
+  unifi-controller:
+    image: jacobalberty/unifi
+    container_name: unifi-controller
+    ports:
+      - "8443:8443"
+    volumes:
+      - unifi_data:/unifi
+    environment:
+      - UNIFI_UID=${UNIFI_UID}
+      - UNIFI_API_KEY=${UNIFI_API_KEY}
+volumes:
+  unifi_data:
